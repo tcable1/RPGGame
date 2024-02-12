@@ -10,7 +10,7 @@ public class LocationManager {
     public static Location Pond = new Location("Pond", "As you move northwards, a glistening pond takes form. The inside teems with life of all sizes, and although the pond is stagnant, the creatures within hardly are…", false);
     public static Location MuddyPatch = new Location("Muddy Patch", "You direct yourself westwards, and with each increasing step you take, a sort of weight befalls your legs. You find yourself in a small muddy patch! Frogs and toads alike stare at your frame as you struggle to move…", false);
     public static Location SouthMeadows = new Location("Meadows?", "The thought to move south comes to mind, and with that thought comes action. The meadow continues on forever… Or so it seems.",false);
-    public static Location EastMeadows = new Location("North Meadows", "“East is where I want to go” you whisper to no one in particular. Something glints in your eye to the left, but your destination has already been chosen. Grass and wildflowers are all you can see as you venture forth, but as you continue walking your foot hits something… ",
+    public static Location EastMeadows = new Location("Eastern Meadows", "'East is where I want to go' you whisper to no one in particular. Something glints in your eye to the left, but your destination has already been chosen. Grass and wildflowers are all you can see as you venture forth, but as you continue walking your foot hits something… ",
             new GameObject("Jewel", "A sparkling red stone", true), false);
 
 

@@ -36,10 +36,7 @@ public class Location {
         this.hasObjects = true;
     }
 
-    @Override
-    public String toString() {
-        return this.locationInventory.getContents().get(0).getName();
-    }
+
 
     public void setName(String name) {
         this.name = name;

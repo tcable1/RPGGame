@@ -11,6 +11,12 @@ public class GameObject {
         this.pickUp = pickUp;
     }
 
+
+    @Override
+    public String toString() {
+        return getName();
+    }
+
     public String getName() {
         return name;
     }
