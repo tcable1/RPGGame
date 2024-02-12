@@ -21,7 +21,7 @@ public class RPGGame {
         instancePlayer = Player.createPlayer();
         GameObject gameObject = new GameObject("NAME", "DESC", true);
 
-        System.out.println(instancePlayer.getName() + ", you awaken, eyes dry from the hot sun. Your vision is cloudy, but you can make out your surroundings.");
+        System.out.println(instancePlayer.getName() + ", you awaken, eyes dry from the sweltering sun. Your vision is cloudy, but you can make out your surroundings.");
         System.out.println("Please use 'help' for commands");
 
 
@@ -184,7 +184,6 @@ public class RPGGame {
         }
 
     }
-
 
 
     public static void main(String[] args) {
