@@ -1,18 +1,39 @@
 package com.cabletrevin;
+import com.cabletrevin.data.Player;
+import com.cabletrevin.data.gameobject.GameObject;
+import com.cabletrevin.data.Location;
+import com.cabletrevin.manager.LocationManager;
 
+import java.awt.event.WindowStateListener;
 import java.util.Scanner;
 
+import static com.cabletrevin.manager.LocationManager.setConnections;
+
 public class RPGGame {
+
+
+
     public static void InputLoop() {
         boolean victory = false;
+        setConnections();
         Scanner scan = new Scanner(System.in);
+        Player instancePlayer = new Player("NAME");
+        instancePlayer = Player.createPlayer();
+        GameObject gameObject = new GameObject("NAME", "DESC", true);
+
+        System.out.println(instancePlayer.getName() + ", you awaken, eyes dry from the hot sun. Your vision is cloudy, but you can make out your surroundings. " + instancePlayer.getCurrentLocation().getDescription());
 
 
 
+
+
+
+        System.out.println("Please use 'help'");
         while (!victory) {
-            System.out.println(">");
+            System.out.print("> ");
             String UserInput = scan.nextLine();
 
+            //Commands
             switch (UserInput.toLowerCase()) {
                 case "quit":
                     System.out.println("Quit? (YES | NO)");
@@ -27,16 +48,58 @@ public class RPGGame {
                         break;
 
                 case "n":
+                    if (instancePlayer.getCurrentLocation().getnLoc() != null) {
+                        instancePlayer.getCurrentLocation().setHasPlayer(false);
+                        instancePlayer.setCurrentLocation(instancePlayer.getCurrentLocation().getnLoc());
+                        instancePlayer.getCurrentLocation().setHasPlayer(true);
+                        System.out.println(instancePlayer.getCurrentLocation().getName());
+                        System.out.println();
+                        System.out.println(instancePlayer.getCurrentLocation().getDescription());
+                        break;
+                    }
+                    else System.out.println("You cannot go this way...");
                     break;
                 case "s":
+                    if (instancePlayer.getCurrentLocation().getsLoc() != null) {
+                        instancePlayer.getCurrentLocation().setHasPlayer(false);
+                        instancePlayer.setCurrentLocation(instancePlayer.getCurrentLocation().getsLoc());
+                        instancePlayer.getCurrentLocation().setHasPlayer(true);
+                        System.out.println(instancePlayer.getCurrentLocation().getName());
+                        System.out.println();
+                        System.out.println(instancePlayer.getCurrentLocation().getDescription());
+                        break;
+                    }
+                    else System.out.println("You cannot go this way...");
                     break;
                 case "e":
+                    if (instancePlayer.getCurrentLocation().geteLoc() != null) {
+                        instancePlayer.getCurrentLocation().setHasPlayer(false);
+                        instancePlayer.setCurrentLocation(instancePlayer.getCurrentLocation().geteLoc());
+                        instancePlayer.getCurrentLocation().setHasPlayer(true);
+                        System.out.println(instancePlayer.getCurrentLocation().getName());
+                        System.out.println();
+                        System.out.println(instancePlayer.getCurrentLocation().getDescription());
+                        break;
+                    }
+                    else System.out.println("You cannot go this way...");
                     break;
                 case "w":
+                    if (instancePlayer.getCurrentLocation().getwLoc() != null) {
+                        instancePlayer.getCurrentLocation().setHasPlayer(false);
+                        instancePlayer.setCurrentLocation(instancePlayer.getCurrentLocation().getwLoc());
+                        instancePlayer.getCurrentLocation().setHasPlayer(true);
+                        System.out.println(instancePlayer.getCurrentLocation().getName());
+                        System.out.println();
+                        System.out.println(instancePlayer.getCurrentLocation().getDescription());
+                        break;
+                    }
+                    else System.out.println("You cannot go this way...");
                     break;
                 case "b":
+
                     break;
                 case "i":
+                    System.out.println(instancePlayer.getCurrentLocation().getDescription() + " Items Available: " + instancePlayer.getCurrentLocation().getLocationInventory().toString());
                     break;
                 case "l":
                     break;
@@ -76,7 +139,10 @@ public class RPGGame {
 
             }
         }
+
     }
+
+
 
     public static void main(String[] args) {
         InputLoop();

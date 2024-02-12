@@ -1,4 +1,4 @@
-package com.cabletrevin;
+package com.cabletrevin.data.gameobject;
 
 public class GameObject {
     private String name;
